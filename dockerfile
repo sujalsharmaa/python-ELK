@@ -5,8 +5,8 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirments.txt .
+RUN pip install --no-cache-dir -r requirments.txt
 
 # Copy the app files
 COPY . . 
