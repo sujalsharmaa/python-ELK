@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   flask-app:
     build: .
@@ -30,16 +31,15 @@ services:
     depends_on:
       - elasticsearch
 
-    filebeat:
-      image: docker.elastic.co/beats/filebeat:7.17.9
-      container_name: filebeat
-      volumes:
-        - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
-        - ./app.log:/app/app.log
-      depends_on:
-        - logstash
-      command: ["--strict.perms=false"]
-    
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.17.9
+    container_name: filebeat
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./app.log:/app/app.log
+    depends_on:
+      - logstash
+    command: ["--strict.perms=false"]
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.17.9
@@ -50,4 +50,3 @@ services:
       - SERVER_PUBLICBASEURL=http://44.199.191.11:5601  
     depends_on:
       - elasticsearch
-  
