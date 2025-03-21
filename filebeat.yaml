@@ -7,4 +7,4 @@ filebeat.inputs:
     json.add_error_key: true
 
 output.logstash:
-  hosts: ["http://44.199.191.11:5044"]
+  hosts: ["http://44.212.46.83:5044"]
