@@ -1,0 +1,10 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /app/app.log
+    json.keys_under_root: true
+    json.add_error_key: true
+
+output.logstash:
+  hosts: ["http://44.199.191.11:5044"]
