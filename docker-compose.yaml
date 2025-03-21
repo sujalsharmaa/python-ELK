@@ -33,5 +33,7 @@ services:
     container_name: kibana
     ports:
       - "5601:5601"
+    environment:
+      - SERVER_PUBLICBASEURL=http://44.199.191.11:5601  
     depends_on:
       - elasticsearch
