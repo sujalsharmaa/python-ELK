@@ -5,12 +5,12 @@ filebeat.inputs:
       - /app/app.log  # Correct path
 
 output.logstash:
-  hosts: ["http://44.205.11.184:5044"]
+  hosts: ["http://44.205.11.184:5044"]  
 
 setup.kibana:
   host: "http://44.205.11.184:5601"
 
-monitoring.enabled: true
+monitoring.enabled: true  # Correct
 
 logging:
   level: info
