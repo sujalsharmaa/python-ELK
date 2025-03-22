@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./app.log:/app/app.log
+      - ./app.log:./app/app.log
     depends_on:
       - elasticsearch
       - logstash
@@ -37,7 +37,7 @@ services:
     user: root
     volumes:
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-      - ./app.log:/app/app.log
+      - ./app.log:./app/app.log
     depends_on:
       - logstash
 
