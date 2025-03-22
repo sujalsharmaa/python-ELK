@@ -31,15 +31,15 @@ services:
     depends_on:
       - elasticsearch
 
-  filebeat:
-    image: docker.elastic.co/beats/filebeat:7.17.9
-    container_name: filebeat
+  fluent-bit:
+    image: fluent/fluent-bit:2.1
+    container_name: fluent-bit
     volumes:
-      - ./filebeat.yaml:/usr/share/filebeat/filebeat.yaml:ro
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
       - ./app.log:/app/app.log
     depends_on:
       - logstash
-    command: ["--strict.perms=false"]
+
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.17.9
