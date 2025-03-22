@@ -5,7 +5,7 @@ filebeat.inputs:
       - /app/app.log  # Correct path
 
 output.logstash:
-  hosts: ["http://3.89.229.219:5044"]
+  hosts: ["logstash:5044"]  # Instead of external IP
 
 setup.kibana:
   host: "http://3.89.229.219:5601"
