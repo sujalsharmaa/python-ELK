@@ -10,8 +10,8 @@ output.logstash:
 setup.kibana:
   host: "http://44.205.11.184:5601"
 
-monitoring.enabled: true
-number_of_replicas: 0
+monitoring.enabled: false
+
 
 logging:
   level: info
