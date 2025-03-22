@@ -10,7 +10,7 @@ output.logstash:
 setup.kibana:
   host: "http://3.89.229.219:5601"
 
-monitoring.enabled: true
+monitoring.enabled: false
 
 
 logging:
