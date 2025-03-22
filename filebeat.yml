@@ -2,10 +2,21 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - ./app.log
-    json.keys_under_root: true
-    json.add_error_key: true
-    json.message_key: message
+      - /app/app.log  # Correct path
 
 output.logstash:
-  hosts: ["http://98.80.67.187:5044"]
+  hosts: ["logstash:5044"]
+
+setup.kibana:
+  host: "http://44.205.11.184:5601"
+
+monitoring.enabled: true
+
+logging:
+  level: info
+  to_files: true
+  files:
+    path: "/var/log/filebeat"
+    name: filebeat
+    keepfiles: 7
+    permissions: 0644
